@@ -1,0 +1,43 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="202410152208_added_rpg_items_table" author="ClausCode">
+
+        <createTable tableName="rpg_items">
+            <column name="id" type="VARCHAR(36)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="link" type="VARCHAR(64)">
+                <constraints nullable="true" unique="true"/>
+            </column>
+
+            <column name="category" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="rarity" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="class_controller" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="display_name" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="description" type="clob">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="data" type="clob">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
